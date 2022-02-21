@@ -49,19 +49,8 @@ nav ul li a {
     transition: .5s;
 }
 
-nav ul li:nth-child(1) a:hover {
-    border-top: 2px solid crimson;
-    border-left: 2px solid crimson;
-}
-
-nav ul li:nth-child(2) a:hover {
-    border-left: 2px solid crimson;
-    border-right: 2px solid crimson;
-}
-
-nav ul li:nth-child(3) a:hover {
-    border-bottom: 2px solid crimson;
-    border-right: 2px solid crimson;
+nav ul li a:hover {
+    border: 2px solid crimson;
 }
 
 header {
