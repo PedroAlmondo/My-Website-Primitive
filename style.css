@@ -1,8 +1,3 @@
-/* @font-face {
-    font-family: "BTB";
-    src: url("Ballam to Brooklyn.otf");
-} */
-
 @import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
 
 * {
@@ -12,26 +7,51 @@
 }
 
 html {
-    --neonColor: #94B3FD;
+    --neonColor: #6600ff;
+    --aboutColor: #08ff08;
+    --workColor: #ff11ff;
+    --contactColor: #ffe700;
 }
 
 body {
     background-color: black;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 100vh;
+    font-family: 'Grand Hotel', sans-serif;
+    background-image: url('tlo.jpg');
+
+}
+
+header::after {
+    position: fixed;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+}
+
+header * {
+    z-index: 1;
 }
 
 header div.neon {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    padding-top: 30px;
 }
 
 header div.neon h1 {
-    /* font-family: 'BTB'; */
-    font-family: 'Grand Hotel', cursive;
     font-size: 150px;
     color: var(--neonColor);
     font-style: italic;
@@ -47,11 +67,85 @@ header div.neon h1.question {
     transform: translate(-10%, 50%);
 }
 
+header nav {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 50px;
+}
+
+header nav a div.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    height: 270px;
+    width: 270px;
+    border: 2px solid;
+    border-radius: 60px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+header nav a:nth-of-type(1):hover div.card {
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem var(--aboutColor),
+        0 0 0.8rem var(--aboutColor),
+        0 0 2.8rem var(--aboutColor),
+        inset 0 0 1.3rem var(--aboutColor);
+}
+
+header nav a:nth-of-type(2):hover div.card {
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem var(--workColor),
+        0 0 0.8rem var(--workColor),
+        0 0 2.8rem var(--workColor),
+        inset 0 0 1.3rem var(--workColor);
+}
+
+header nav a:nth-of-type(3):hover div.card {
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem var(--contactColor),
+        0 0 0.8rem var(--contactColor),
+        0 0 2.8rem var(--contactColor),
+        inset 0 0 1.3rem var(--contactColor);
+}
+
+header nav a:nth-of-type(1) div.card {
+    color: var(--aboutColor);
+    border-color: var(--aboutColor);
+}
+
+header nav a:nth-of-type(2) div.card {
+    color: var(--workColor);
+    border-color: var(--workColor);
+}
+
+
+header nav a:nth-of-type(3) div.card {
+    color: var(--contactColor);
+    border-color: var(--contactColor);
+}
+
+header nav a div.card i {
+    font-size: 100px;
+}
+
+header nav a div.card h2 {
+    margin-top: 30px;
+    font-size: 40px;
+}
+
+header nav a div.card p {
+    font-size: 20px;
+}
+
 @keyframes pulsate {
     100% {
         text-shadow:
             0 0 4px #fff,
-            /* 0 0 11px #fff, */
+            0 0 11px #fff,
             0 0 19px var(--neonColor),
             0 0 40px var(--neonColor),
             0 0 80px var(--neonColor),
@@ -63,7 +157,7 @@ header div.neon h1.question {
     0% {
         text-shadow:
             0 0 4px #fff,
-            /* 0 0 10px #fff, */
+            0 0 10px #fff,
             0 0 18px var(--neonColor),
             0 0 38px var(--neonColor),
             0 0 73px var(--neonColor),
