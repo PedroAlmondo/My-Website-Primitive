@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Pacifico&display=swap');
 
 * {
     margin: 0;
@@ -27,7 +27,6 @@ header {
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
-    font-family: 'Grand Hotel', sans-serif;
     background-image: url('tlo.jpg');
     background-size: cover;
 
@@ -50,6 +49,7 @@ header div.neon {
     display: flex;
     justify-content: center;
     padding-top: 30px;
+    animation: appear 5s 0.5s both;
 }
 
 header div.neon h1 {
@@ -58,6 +58,7 @@ header div.neon h1 {
     font-style: italic;
     font-weight: 100;
     animation: pulsate 0.11s ease-in-out infinite alternate;
+    font-family: 'Grand Hotel', sans-serif;
 }
 
 header div.neon h1.hello {
@@ -78,12 +79,13 @@ header nav a div.card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
-    height: 270px;
-    width: 270px;
+    padding: 30px 0;
+    height: 300px;
+    width: 300px;
     border: 2px solid;
     border-radius: 60px;
     background-color: rgba(0, 0, 0, 0.4);
+    font-family: 'Pacifico', cursive;
 }
 
 header nav a:nth-of-type(1):hover div.card {
@@ -135,7 +137,7 @@ header nav a div.card i {
 
 header nav a div.card h2 {
     margin-top: 30px;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 header nav a div.card p {
@@ -165,5 +167,35 @@ header nav a div.card p {
             0 0 80px var(--neonColor),
             0 0 94px var(--neonColor),
             0 0 140px var(--neonColor);
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    76% {
+        opacity: 1;
+    }
+
+    78% {
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    98% {
+        opacity: 1;
+    }
+
+    99% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
