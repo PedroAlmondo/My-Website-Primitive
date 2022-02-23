@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* @font-face {
+    font-family: "BTB";
+    src: url("Ballam to Brooklyn.otf");
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
 
 * {
     margin: 0;
@@ -6,125 +11,64 @@
     box-sizing: border-box;
 }
 
+html {
+    --neonColor: #94B3FD;
+}
+
 body {
-    font-family: 'Raleway', sans-serif;
-    overflow-x: hidden;
-    background-color: #eee;
-    height: 200vh;
-}
-
-nav {
-    position: fixed;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    height: 100px;
     background-color: black;
-    width: 100%;
-    transition: 1s;
-}
-
-nav.hidden {
-    transform: translateY(-100%);
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    justify-content: space-around;
-    width: 100%;
-}
-
-nav ul li {
-    width: 20%;
-}
-
-nav ul li a {
-    line-height: 50px;
-    display: block;
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    border: 2px solid white;
-    transition: .5s;
-}
-
-nav ul li a:hover {
-    border: 2px solid crimson;
 }
 
 header {
-    width: 100%;
     height: 100vh;
 }
 
-header section.text {
-    position: absolute;
-    left: 50px;
-    top: 50%;
-    transform: translateY(-50%);
+header div.neon {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
 
-header section.text h1 {
-    font-size: 90px;
-    font-weight: 900;
-    text-transform: uppercase;
-    height: 100px;
+header div.neon h1 {
+    /* font-family: 'BTB'; */
+    font-family: 'Grand Hotel', cursive;
+    font-size: 150px;
+    color: var(--neonColor);
+    font-style: italic;
+    font-weight: 100;
+    animation: pulsate 0.11s ease-in-out infinite alternate;
 }
 
-header h1.first {
-    animation: slide 1s linear both;
+header div.neon h1.hello {
+    font-size: 175px;
 }
 
-header h1.second {
-    animation: slide 1s 1s linear both, underline 1s 2s linear both;
+header div.neon h1.question {
+    transform: translate(-10%, 50%);
 }
 
-header h1.third {
-    animation: slide 1s 2s linear both;
-}
-
-header i {
-    position: absolute;
-    font-size: 400px;
-    top: 50%;
-    right: 25%;
-    transform: translateY(-50%);
-    animation: shake 4s ease both;
-    transform-origin: 50% 100%;
-}
-
-main {
-    height: 100vh;
-    background-color: white;
-}
-
-@keyframes shake {
-    25% {
-        transform: translateY(-50%) rotate(-15deg);
-    }
-
+@keyframes pulsate {
     100% {
-        transform: translateY(-50%) rotate(30deg);
+        text-shadow:
+            0 0 4px #fff,
+            /* 0 0 11px #fff, */
+            0 0 19px var(--neonColor),
+            0 0 40px var(--neonColor),
+            0 0 80px var(--neonColor),
+            0 0 90px var(--neonColor),
+            0 0 100px var(--neonColor),
+            0 0 150px var(--neonColor);
     }
-}
 
-@keyframes slide {
     0% {
-        transform: translateX(-150%);
-    }
-
-    100% {
-        transform: translateX(0%);
-    }
-}
-
-@keyframes underline {
-    0% {
-        border-bottom: 5px solid transparent;
-    }
-
-    100% {
-        border-bottom: 5px solid crimson;
+        text-shadow:
+            0 0 4px #fff,
+            /* 0 0 10px #fff, */
+            0 0 18px var(--neonColor),
+            0 0 38px var(--neonColor),
+            0 0 73px var(--neonColor),
+            0 0 80px var(--neonColor),
+            0 0 94px var(--neonColor),
+            0 0 140px var(--neonColor);
     }
 }
